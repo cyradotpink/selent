@@ -1,0 +1,4 @@
+function kira_util:select_entity_unhighlight_selected
+function kira_util:select_entity_init
+function kira_util:select_entity_ensure_selection
+execute unless score @s selent_hide_selection matches 1 run function kira_util:select_entity_highlight_selected

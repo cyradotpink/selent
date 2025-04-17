@@ -1,0 +1,2 @@
+scoreboard players reset @s selent_hide_selection
+function kira_util:select_entity_highlight_selected
