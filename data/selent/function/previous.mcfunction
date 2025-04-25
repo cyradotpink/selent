@@ -1,4 +1,4 @@
-function kira_util:select_entity_unhighlight_selected
 function kira_util:select_entity_previous
 function kira_util:select_entity_ensure_selection
-execute unless score @s selent_hide_selection matches 1 run function kira_util:select_entity_highlight_selected
+execute unless score @s selent_hide_selection matches 1 run function kira_util:marker_head_ride_selected
+function selent:tell_selected

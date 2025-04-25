@@ -1,1 +1,1 @@
-$data modify storage kira_util:select_entity out.uuid_selector set value "@e[nbt={UUID: $(uuid)},limit=1]"
+$data modify storage kira_util:select_entity out.selector set value "@e[nbt={UUID: $(uuid)},limit=1]"
