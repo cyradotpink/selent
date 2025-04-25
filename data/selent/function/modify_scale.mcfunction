@@ -10,8 +10,10 @@ data modify storage selent:scratch args.attribute set value "scale"
 function kira_util:entity_uuid_attribute_set with storage selent:scratch args
 function kira_util:entity_uuid_get_selector with storage selent:scratch args
 
+scoreboard players set @s selent_ttl 600
+
 title @s reset
-title @s actionbar [{text: "", color: "#f7518e"}, {text: "[selent] Set ", color: "#fffb21"}, {nbt: "out", storage: "kira_util:select_entity", interpret: true}, {text: "'s scale to ", color: "#fffb21"}, {nbt: "args.value_percent", storage: "selent:scratch"}, "%"]
+title @s actionbar [{text: "[Selent]", color: "#f7518e"}, {text: " Set ", color: "#fffb21"}, {nbt: "out", storage: "kira_util:select_entity", interpret: true}, {text: "'s scale to ", color: "#fffb21"}, {nbt: "args.value_percent", storage: "selent:scratch"}, "%"]
 
 data remove storage selent:scratch args
 data remove storage kira_util:select_entity out
