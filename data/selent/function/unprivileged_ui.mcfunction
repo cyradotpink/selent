@@ -1,4 +1,4 @@
-function selent:self
+function selent:tell_selected
 
 data modify storage selent:scratch scratch.args set value {}
 data modify storage selent:scratch scratch.args.message set value [""]
@@ -7,7 +7,7 @@ data modify storage selent:scratch scratch.args.message append value [{text: "\u
 
 data modify storage selent:scratch scratch.args.message append value {text: "\n\u25A0", color: "#f7518e"}
 data modify storage selent:scratch scratch.args.message append value " Selection: "
-data modify storage selent:scratch scratch.args.message append value [{text: "[self]", color: "#63ed96", click_event: {action: "run_command", command: "trigger selent set 2"}}, " ", {text: "[previous]", click_event: {action: "run_command", command: "trigger selent set 3"}}, " ", {text: "[next]", click_event: {action: "run_command", command: "trigger selent set 4"}}]
+data modify storage selent:scratch scratch.args.message append value [{text: "[self]", color: "#63ed96", click_event: {action: "run_command", command: "trigger selent set 2"}}, " ", {text: "[previous]", click_event: {action: "run_command", command: "trigger selent set 3"}}, " ", {text: "[next]", click_event: {action: "run_command", command: "trigger selent set 4"}}, " ", {text: "[tell]", click_event: {action: "run_command", command: "trigger selent set 15"}}]
 
 data modify storage selent:scratch scratch.args.message append value {text: "\n\u25A0", color: "#f7518e"}
 data modify storage selent:scratch scratch.args.message append value " Selection marker: "

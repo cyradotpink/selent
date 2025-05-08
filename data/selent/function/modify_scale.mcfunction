@@ -3,6 +3,7 @@ $scoreboard players set @s selent_scale_add $(add)
 
 function kira_util:select_entity_ensure_selection
 function kira_util:select_entity_get_selection
+execute unless function kira_util:select_entity_check_selected_exists run return run function selent:previous
 data modify storage selent:scratch args.uuid set from storage kira_util:select_entity out.selected_uuid
 execute store result storage selent:scratch args.value_percent int 1 run function kira_util:entity_uuid_scale_score_add with storage selent:scratch args
 execute store result storage selent:scratch args.value double 0.01 run data get storage selent:scratch args.value_percent

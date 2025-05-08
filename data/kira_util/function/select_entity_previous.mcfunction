@@ -1,5 +1,5 @@
 execute unless function kira_util:select_entity_previous_remove run return fail
 function kira_util:select_entity_get_selection
-execute unless function kira_util:select_entity_previous_check_exists run return run function kira_util:select_entity_previous
+execute unless function kira_util:select_entity_check_selected_exists run return run function kira_util:select_entity_previous
 data remove storage kira_util:select_entity out
 return 1

@@ -1,1 +1,0 @@
-return run function kira_util:select_entity_previous_check_exists_stage2 with storage kira_util:select_entity out
