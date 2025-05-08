@@ -1,5 +1,5 @@
 scoreboard objectives remove selent_hide_selection
 scoreboard objectives remove selent_scale
-scoreboard objectives selent_ttl
+scoreboard objectives remove selent_ttl
 scoreboard objectives remove selent
 data remove storage kira_util:select_entity players
