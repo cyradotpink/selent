@@ -14,6 +14,8 @@ execute as @a[scores={selent=14}] at @s run function selent:modify_scale {add: 1
 execute as @a[scores={selent=15}] at @s run function selent:tell_selected
 execute as @a[scores={selent=1}] at @s run function selent:unprivileged_ui
 
+execute as @a[scores={selent=1..}] run scoreboard players set @s selent_ttl 600
+
 execute as @a[scores={selent_ttl=1..}] run scoreboard players remove @s selent_ttl 1
 execute as @a[scores={selent_ttl=0}] run function selent:reset
 
