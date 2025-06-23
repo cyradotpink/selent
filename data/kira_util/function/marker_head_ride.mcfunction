@@ -1,8 +1,10 @@
-$kill @e[tag=kira_util_marker,nbt={Owner: $(player_uuid)}]
-$execute at @e[limit=1,nbt={UUID: $(selected_uuid)}] run summon minecraft:item ~ ~ ~ {Owner: $(player_uuid), Tags: ["kira_util_marker"], CustomName: {"color": "#fffb21", text: "\u2193"}, CustomNameVisible: 1, Invulnerable: 1, PickupDelay: 32767, Age: -32768, Item: {id:"minecraft:player_head", components: {"minecraft:profile": {id: $(player_uuid)}}}}
-$ride @e[limit=1,tag=kira_util_marker,nbt={Owner: $(player_uuid)}] mount @e[limit=1,nbt={UUID: $(selected_uuid)}]
-$execute if entity @e[nbt={Passengers: [{Owner: $(player_uuid), Tags: ["kira_util_marker"]}]}] run return 1
-$kill @e[tag=kira_util_marker,nbt={Owner: $(player_uuid)}]
+$kill @e[tag=kira_util_marker,nbt={data: {owner: $(player_uuid)}}]
+$execute at @e[limit=1,nbt={UUID: $(selected_uuid)}] run summon minecraft:item_display ~ ~ ~ {data: {owner: $(player_uuid)}, Tags: ["kira_util_marker"], billboard: "vertical", transformation: {right_rotation: {axis: [0,1,0], angle: 3.141}, scale: [0.5,0.5,0.1], left_rotation: {axis: [0,1,0], angle: 0}, translation: [0,1,0]}, item: {id:"minecraft:player_head", components: {"minecraft:profile": {id: $(player_uuid)}}}}
+$execute at @e[limit=1,nbt={UUID: $(selected_uuid)}] run summon minecraft:text_display ~ ~ ~ {data: {owner: $(player_uuid)}, Tags: ["kira_util_marker"], billboard: "vertical", brightness: {block: 15, sky: 15}, transformation: {right_rotation: {axis: [0,1,0], angle: 0}, scale: [3,3,1], left_rotation: {axis: [0,1,0], angle: 0}, translation: [-0.035,0,0]}, background: 0, text: {color: "#FFFF00", text: "\u2193"}}
+$ride @e[limit=1,type=item_display,tag=kira_util_marker,nbt={data: {owner: $(player_uuid)}}] mount @e[limit=1,nbt={UUID: $(selected_uuid)}]
+$ride @e[limit=1,type=text_display,tag=kira_util_marker,nbt={data: {owner: $(player_uuid)}}] mount @e[limit=1,type=item_display,tag=kira_util_marker,nbt={data: {owner: $(player_uuid)}}]
+$execute if entity @e[type=!item_display,nbt={Passengers: [{data: {owner: $(player_uuid)}, Tags: ["kira_util_marker"]}]}] run return 1
+$kill @e[tag=kira_util_marker,nbt={data: {owner: $(player_uuid)}}]
 return 0
 
 
